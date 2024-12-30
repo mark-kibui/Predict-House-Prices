@@ -50,12 +50,46 @@ The construction industry faces challenges in accurately predicting cost overrun
 
 
 ### Modeling
-1. **Model Selection**: Train multiple models, including:
-   - Linear Regression
-   - Decision Trees
-   - Random Forest
-   - Gradient Boosting Machines (GBM)
-2. **Model Evaluation**: Evaluate models using metrics such as R-squared, Mean Absolute Error (MAE), and Root Mean Squared Error (RMSE).
+
+In this project, we employed several machine learning models to predict house prices in the Belgian housing market. The following models were used:
+
+1. **Random Forest**  
+   The Random Forest model was trained using the entire feature set. It achieved excellent performance, with an R² score of **0.89** and a Mean Absolute Error (MAE) of **23,544.41**. After performing feature selection and focusing on the most relevant features, the performance slightly decreased with an R² score of **0.88** and an MAE of **22,344.62**. Despite this decrease, the model remained highly effective.
+
+2. **XGBoost (Initial)**  
+   The initial XGBoost model was trained using the full feature set and performed similarly to the second Random Forest model. It achieved an R² score of **0.88** and an MAE of **22,344.62**, showing competitive performance compared to Random Forest.
+
+3. **XGBoost (Tuned)**  
+   The second XGBoost model was trained with advanced hyperparameters to improve performance. The hyperparameters included:
+   - **Learning Rate**: 0.1
+   - **Subsample**: 0.8
+   - **Max Depth**: 8
+   - **Colsample by Tree**: 0.8
+   
+   Despite the hyperparameter tuning, the performance slightly dropped, with an R² score of **0.79** and an MAE of **49,718.28**.
+
+### Model Performance Comparison
+
+| Model                  | Mean Absolute Error (MAE) | Mean Squared Error (MSE) | R² Score |
+|------------------------|---------------------------|--------------------------|----------|
+| **Random Forest (Initial)** | 23,544.41               | 2,816,837,179.21         | 0.89     |
+| **Random Forest (Top Features)** | 22,344.62               | 2,979,806,488.24         | 0.88     |
+| **XGBoost (Initial)**      | 22,344.62               | 2,979,806,488.24         | 0.88     |
+| **XGBoost (Tuned)**        | 49,718.28               | 5,454,263,562.00         | 0.79     |
+
+### Insights:
+- The **Random Forest** model was the most effective, with higher accuracy (R² score of 0.89) and lower error (MAE of 23,544.41) than the XGBoost models.
+
+- **Feature selection** helped improve the performance of the Random Forest model, though there was a slight drop in accuracy.
+
+- **XGBoost (Tuned)** showed promise but underperformed after hyperparameter tuning, indicating that further tuning or a different set of features could improve its results.
+
+### Business Implications:
+- **Accurate Price Prediction**: The model's ability to accurately predict property prices can help **real estate agencies** and **individual sellers** optimize their pricing strategies.
+- **Property Investment**: Investors can use the model to make informed decisions about property investments, helping them to predict future market trends based on key influencing factors like property area, age, and location.
+- **Risk Mitigation**: By understanding the key factors that influence property prices, **construction companies** and **developers** can adjust their strategies to minimize costs and improve the financial planning of projects.
+
+
 
 ### Cross-Validation
 Perform k-fold cross-validation to validate model performance and avoid overfitting.
