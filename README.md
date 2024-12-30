@@ -6,26 +6,29 @@ This project aims to predict construction cost overruns based on various factors
 ## Data Description
 The dataset contains information about property sales, including characteristics of the buildings and the type of sale. The columns in the dataset include:
 
-- `locality`: The location of the property.
-- `type_of_property`: The type of building. Either 'House' or 'Apartment'.
-- `subtype_of_property`: More detailed classification of the property type. (e.g, House, villa)
-- `price`: The final sale price of the property.
-- `type_of_sale`: Indicates if the sale was private or through a realtor.
-- `number_of_rooms`: Number of rooms in the building.
-- `house_area`: The total living area of the house (in square meters).
-- `fully_equipped_kitchen`: Indicates if the kitchen is fully equipped.
-- `furnished`: Indicates if the house is furnished.
-- `open_fire`: Indicates the presence of an open fire.
-- `terrace`: Indicates if there is a terrace.
-- `terrace_area`: Area of the terrace (in square meters).
-- `garden`: Indicates if there is a garden.
-- `garden_area`: Area of the garden (in square meters).
-- `surface_of_the_land`: Total area of land on which the property is built.
-- `surface_of_the_plot_of_land`: Area of the land on which the house is situated.
-- `number_of_facades`: Number of facades of the building.
-- `swimming_pool`: Indicates if there is a swimming pool.
-- `state_of_the_building`: Condition of the building (e.g., new, renovated).
-- `construction_year`: Year the building was constructed.
+| **Column**                  | **Description**                                                                 |
+|-----------------------------|---------------------------------------------------------------------------------|
+| `locality`                  | The location of the property.                                                   |
+| `type_of_property`          | The type of building. Either 'House' or 'Apartment'.                            |
+| `subtype_of_property`       | More detailed classification of the property type. (e.g., House, villa)        |
+| `price`                     | The final sale price of the property.                                           |
+| `type_of_sale`              | Indicates if the sale was private or through a realtor.                         |
+| `number_of_rooms`           | Number of rooms in the building.                                                |
+| `house_area`                | The total living area of the house (in square meters).                          |
+| `fully_equipped_kitchen`    | Indicates if the kitchen is fully equipped.                                     |
+| `furnished`                 | Indicates if the house is furnished.                                            |
+| `open_fire`                 | Indicates the presence of an open fire.                                         |
+| `terrace`                   | Indicates if there is a terrace.                                                |
+| `terrace_area`              | Area of the terrace (in square meters).                                         |
+| `garden`                    | Indicates if there is a garden.                                                 |
+| `garden_area`               | Area of the garden (in square meters).                                          |
+| `surface_of_the_land`       | Total area of land on which the property is built.                              |
+| `surface_of_the_plot_of_land`| Area of the land on which the house is situated.                                |
+| `number_of_facades`         | Number of facades of the building.                                              |
+| `swimming_pool`             | Indicates if there is a swimming pool.                                          |
+| `state_of_the_building`     | Condition of the building (e.g., new, renovated).                              |
+| `construction_year`         | Year the building was constructed.                                              |
+
 
 ## Problem Statement
 The construction industry faces challenges in accurately predicting cost overruns for building projects. This project aims to develop a predictive model that estimates the likelihood of a cost overrun based on the provided features of the property.
