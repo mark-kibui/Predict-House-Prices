@@ -34,6 +34,26 @@ The dataset contains information about property sales, including characteristics
 - The data has signinficant null values in some columns, some columns were dropped and for others values were imputed
 ![Missing values by Percentage](Assets/missing_values.png)
 
+- Outliers for the number of rooms were also detected.
+![Outlier values for rooms](Assets/room_outliers.png)
+
+- Outliers for construction year.
+![Outlier values for construction year](Assets/construction_year.png)
+
+Steps taken to clean the data:
+1. **Drop Columns**:
+   - Removed the `furnished` and `surface_of_the_plot_of_land` columns.
+
+2. **Handle Missing Values**:
+   - Filled missing values in `construction_year` with the median.
+   - Assumed missing values in `terrace_area` and `garden_area` as 0 (indicating no terrace or garden area).
+   - Filled missing values in `surface_of_the_land` with the median.
+   - For categorical columns like `state_of_the_building`, filled missing values with the mode.
+   - For numeric columns such as `number_of_rooms`, `house_area`, and `number_of_facades`, filled missing values with the median.
+
+3. **Filter Invalid Data**:
+   - Dropped rows where `construction_year` is later than 2023.
+
 ### Exploratory Data Analysis (EDA)
 1. **Univariate Analysis**: Investigate the distribution of key features such as `price`, `house_area`, and `number_of_rooms`.
 2. **Correlation Analysis**: Analyze correlations between features and the target variable (`price` or any indicator of cost overrun).
