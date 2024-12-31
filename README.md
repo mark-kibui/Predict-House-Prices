@@ -38,7 +38,7 @@ The dataset contains information about property sales, including characteristics
 ![Outlier values for rooms](Assets/room_outliers.png)
 
 - Outliers for construction year.
-![Outlier values for construction year](Assets/construction_year.png)
+![Outlier values for construction year](Assets/construction_years.png)
 
 Steps taken to clean the data:
 1. **Drop Columns**:
