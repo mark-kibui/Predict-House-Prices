@@ -68,41 +68,34 @@ In this project, we employed several machine learning models to predict house pr
    
    Despite the hyperparameter tuning, the performance slightly dropped, with an R² score of **0.79** and an MAE of **49,718.28**.
 
+
+## Conclusion
+In this project, two primary models, **Random Forest** and **XGBoost**, were evaluated based on their performance metrics and suitability for real-world applications.
+
+#### Random Forest
+- **Initial Model**: Achieved an R² score of 0.89 and a Mean Absolute Error (MAE) of 22,132.57, explaining 89% of the variance in house prices with low prediction error.
+- **Feature Selection**: After selecting top features, performance decreased slightly (R²: 0.86, MAE: 26,141.97), but the model remained robust and reliable.
+
+#### XGBoost
+- **Initial Model**: Performed moderately, with an R² score of 0.67 and an MAE of 22,344.62.
+- **Tuned Model**: After hyperparameter optimization (learning rate: 0.05, max depth: 8, subsample ratio: 0.8, colsample_bytree: 0.8), the model improved slightly to an R² score of 0.70 but experienced a significant increase in MAE (61,194.28), indicating instability.
+
 ### Model Performance Comparison
 
-| Model                  | Mean Absolute Error (MAE) | Mean Squared Error (MSE) | R² Score |
-|------------------------|---------------------------|--------------------------|----------|
-| **Random Forest (Initial)** | 23,544.41               | 2,816,837,179.21         | 0.89     |
-| **Random Forest (Top Features)** | 22,344.62               | 2,979,806,488.24         | 0.88     |
-| **XGBoost (Initial)**      | 22,344.62               | 2,979,806,488.24         | 0.88     |
-| **XGBoost (Tuned)**        | 49,718.28               | 5,454,263,562.00         | 0.79     |
+| Model                 | Configuration            | R² Score | MAE (Mean Absolute Error) | Notes                                                                                     |
+|-----------------------|--------------------------|----------|---------------------------|-------------------------------------------------------------------------------------------|
+| Random Forest         | Initial                 | 0.89     | 22,132.57                 | Performed excellently, explaining 89% of variance with a low prediction error.            |
+|                       | Feature Selection       | 0.86     | 26,141.97                 | Performance decreased slightly after focusing on top features.                            |
+| XGBoost               | Initial                 | 0.67     | 22,344.62                 | Initial performance was lower compared to Random Forest.                                  |
+|                       | Tuned Hyperparameters   | 0.70     | 61,194.28                 | Hyperparameter tuning improved R² but increased MAE significantly, indicating instability. |
 
-### Insights:
-- The **Random Forest** model was the most effective, with higher accuracy (R² score of 0.89) and lower error (MAE of 23,544.41) than the XGBoost models.
+**Random Forest** was selected as the final model due to its consistent performance, computational efficiency, and robustness. It delivered the best balance of predictive power and cost-effectiveness, making it ideal for real-world applications.
 
-- **Feature selection** helped improve the performance of the Random Forest model, though there was a slight drop in accuracy.
+## Recommendations
+1. **Cost Efficiency**: Use the feature-selected Random Forest model for resource-constrained scenarios as it balances performance and computational cost effectively.
+2. **Further Optimization**: Explore hyperparameter tuning for Random Forest (e.g., `max_depth`, `n_estimators`) to enhance performance.
+3. **Alternative Models**: Evaluate lightweight models like **LightGBM** for potentially better results with reduced computational demands.
+4. **Regular Updates**: Re-train the model periodically with updated data to ensure relevance in dynamic markets.
+5. **Explainability**: Leverage feature importance from Random Forest to provide actionable insights into key factors influencing house prices.
 
-- **XGBoost (Tuned)** showed promise but underperformed after hyperparameter tuning, indicating that further tuning or a different set of features could improve its results.
-
-### Business Implications:
-- **Accurate Price Prediction**: The model's ability to accurately predict property prices can help **real estate agencies** and **individual sellers** optimize their pricing strategies.
-- **Property Investment**: Investors can use the model to make informed decisions about property investments, helping them to predict future market trends based on key influencing factors like property area, age, and location.
-- **Risk Mitigation**: By understanding the key factors that influence property prices, **construction companies** and **developers** can adjust their strategies to minimize costs and improve the financial planning of projects.
-
-
-
-### Cross-Validation
-Perform k-fold cross-validation to validate model performance and avoid overfitting.
-
-## Results and Conclusion
-- **Model Performance**: Compare the performance of different models.
-- **Insights**: Identify key factors influencing construction cost overruns.
-- **Business Implication**: Provide recommendations for construction firms on how to mitigate cost overruns.
-
-## Future Work
-- Incorporate additional data sources, such as historical project budgets or external economic factors.
-- Explore deep learning models to capture complex relationships in the data.
-
-## References
-- List any references or research papers consulted during the project.
-
+By implementing these recommendations, this project showcases how machine learning can be applied effectively in real estate pricing, providing valuable insights and reliable predictions for the Belgian housing market.
