@@ -1,4 +1,4 @@
-# Construction Cost Overrun Prediction
+# Belgian House Price Prediction
 
 ## Project Overview
 This project aims to predict construction cost overruns based on various factors related to the type, location, and features of a building. The goal is to create a model that helps construction firms estimate the potential for cost overruns during the planning and building phases.
@@ -29,18 +29,10 @@ The dataset contains information about property sales, including characteristics
 | state_of_the_building      | Condition of the building (e.g., new, renovated).                               |
 | construction_year          | Year the building was constructed. 
 
-
-## Problem Statement
-The construction industry faces challenges in accurately predicting cost overruns for building projects. This project aims to develop a predictive model that estimates the likelihood of a cost overrun based on the provided features of the property.
-
-## Approach
-
 ### Data Preprocessing
-1. **Missing Value Handling**: Check for and handle missing values across the dataset.
-2. **Feature Engineering**: 
-   - Convert categorical features to numerical (e.g., `type_of_property`, `fully_equipped_kitchen`).
-   - Normalize numerical features (e.g., `house_area`, `price`) for model compatibility.
-3. **Data Splitting**: Split the dataset into training and testing sets.
+1. **Missing Value Handling**
+- The data has signinficant null values in some columns, some columns were dropped and for others values were imputed
+![Missing values by Percentage](Assets/missing_values.png)
 
 ### Exploratory Data Analysis (EDA)
 1. **Univariate Analysis**: Investigate the distribution of key features such as `price`, `house_area`, and `number_of_rooms`.
