@@ -1,7 +1,7 @@
 # Belgian House Price Prediction
 
 ## Project Overview
-This project aims to predict construction cost overruns based on various factors related to the type, location, and features of a building. The goal is to create a model that helps construction firms estimate the potential for cost overruns during the planning and building phases.
+This project aims to predict house cost based on various factors related to the type, location, and features of a building. The goal is to create a model that helps construction firms and/or house buyers estimate the potential house price.
 
 ## Data Description
 The dataset contains information about property sales, including characteristics of the buildings and the type of sale. The columns in the dataset include:
